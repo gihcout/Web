@@ -1,6 +1,5 @@
 <img align="center" heigt="30" width="40" src="https://github.com/gihcout/gihcout/assets/112673878/6b330ca4-16b8-4f44-b54a-4e6683b5f1a0" />
 
-# Desenvolvimento WEB
 
 Sites e aplicações básicas realizadas em aula.
 
