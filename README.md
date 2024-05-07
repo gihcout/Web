@@ -8,37 +8,39 @@ Sites e aplicações básicas realizadas em aula.
 
 ```html
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Website</title>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Meu Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Página Inicial</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section>
-            <h2>Bem-vindo ao Meu Website</h2>
-            <p>Este é um exemplo simples de código HTML para o README.md</p>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2024 Meu Website. Todos os direitos reservados.</p>
-    </footer>
+    <div id="hello-world">
+        <p>Hello World!</p>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
 ```
+&nbsp;
+
+```css
+body{
+    background-color: black;
+}    
+
+#hello-world {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 24px;
+    color: rgb(202, 57, 154);
+}
+```
+&nbsp;
+
+```javascript
+console.log("Hello, World!");
+```
+
 #
 
 [<img width="45" src="https://github.com/gihcout/arduino/assets/112673878/a25404ac-e2a0-4e53-9f31-3a55b0bdfebc" />](https://github.com/gihcout)
