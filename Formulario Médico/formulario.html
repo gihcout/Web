@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario - Inputs </title>
+
+    <style>
+        body{
+            background-color: black;
+        }
+
+        p{
+            color: white;
+        }
+
+        #campo_nome{
+            left:95px;
+            top:23px;
+            width: 225px;
+        }
+
+        .area{
+            position: relative;
+            left:37%;
+            top:29%;
+            width:320px;
+            height: 270px;
+            color: white;
+        }
+    </style>
+
+    <script language="Javascript">
+        function validacaoEmail(field) {
+        usuario = field.value.substring(0, field.value.indexOf("@"));
+        dominio = field.value.substring(field.value.indexOf("@")+ 1, field.value.length);
+        if ((usuario.length >=1) &&
+            (dominio.length >=3) &&
+            (usuario.search("@")==-1) &&
+            (dominio.search("@")==-1) &&
+            (usuario.search(" ")==-1) &&
+            (dominio.search(" ")==-1) &&
+            (dominio.search(".")!=-1) &&
+            (dominio.indexOf(".") >=1)&&
+            (dominio.lastIndexOf(".") < dominio.length - 1)) {
+        document.getElementById("msgemail").innerHTML="E-mail válido";
+        alert("email valido");
+        }
+        else{
+        document.getElementById("msgemail").innerHTML="<font color='red'>Email inválido </font>";
+        alert("E-mail invalido");
+        }
+        }
+
+        $(document).ready(function() {
+            $('#cep').on('input', function() {
+                var cep = $(this).val().replace(/\D/g, '');
+                if (cep.length == 8) {
+                    $.getJSON('https://viacep.com.br/ws/' + cep + '/json/', function(data) {
+                        if (!("erro" in data)) {
+                            $('#endereco').val(data.logradouro);
+                            $('#bairro').val(data.bairro);
+                            $('#cidade').val(data.localidade);
+                            $('#estado').val(data.uf);
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <div class="area">
+        <form>
+            <label for="nome">Paciente: </label>
+            <input id="campo_nome" type="text" name="Paciente" placeholder="Digite o nome..." maxlength="50" required><br>
+
+            <br>
+
+            <label for="dtnas">Data nascimento: </label>
+            <input id="dtnas" type="date" name="dtnas" required><br>
+            
+            <br>
+
+            <label for="registrogeral">RG: </label>
+            <input id="registrogeral" type="text" name="registrogeral" maxlength="9" pattern="[0-9]{2} [0-9]{3} [0-9]{3} [0-9]{1}" required><br>
+            
+            <br>
+
+            <label for="csn">CSN: </label>
+            <input id="csn" type="text" name="csn" maxlength="12" pattern="[0-9]{12}"  placehold= "Digite o
+            Cartão SUS do paciente" required><br>
+
+            <br>
+
+            <label for="sexo">Sexo biológico: </label>
+            <input id="sexo" type="radio" name="sexo">Feminino
+            <input id="sexo" type="radio" name="sexo">Masculino<br>
+            <input id="sexo" type="radio" name="sexo">Intersexual
+            <input id="sexo" type="radio" name="sexo">Prefiro não identificar<br>
+
+            <br>
+
+            <label for="genero">Gênero: </label>
+            <input id="genero" type="radio" name="genero">Cisgênero
+            <input id="genero" type="radio" name="genero">Transgênero
+            <input id="genero" type="radio" name="genero">Transexual
+            <input id="genero" type="radio" name="genero">Não-binário
+            <input id="genero" type="radio" name="genero">Agênero
+            <input id="genero" type="radio" name="genero">Gênero-fluido
+            <input id="genero" type="radio" name="genero">Crossdresser
+            <input id="genero" type="radio" name="genero">Prefiro não identificar<br>
+
+            <br>
+
+            <label for="mae">Nome completo Mãe: </label>
+            <input id="mae" type="text" name="mae" placeholder="Digite o nome da mãe..." maxlength="50" required><br>
+
+            <br>
+
+            <label for="cep">CEP:</label>
+            <input id="cep" type="text" name="cep" placeholder="00000-000" maxlength="9" required><br>
+
+            <br>
+
+            <label for="endereco">Endereço:</label>
+            <input id="endereco" type="text" name="endereco" readonly><br>
+
+            <br>
+
+            <label for="bairro">Bairro:</label>
+            <input id="bairro" type="text" name="bairro" readonly><br>
+
+            <br>
+
+            <label for="cidade">Cidade:</label>
+            <input id="cidade" type="text" name="cidade" readonly><br>
+
+            <br>
+
+            <label for="estado">Estado:</label>
+            <input id="estado" type="text" name="estado" readonly><br>
+
+            <br>
+
+            <label for="fone">Celular com DDD: </label>
+            <input id="fone" type="tel" name="fone" pattern="+[0-9]{2} ([0-9]{2}) [0-9]{5}-[0-9]{4}" placeholder="99 99999-9999" required><br>
+
+            <br>
+
+            <label for="email">E-mail: </label>
+            <input id="campo_nome" type="email" name="email" onblur="validacaoEmail(f1.email)" placeholder="Digite o e-mail..."><br>
+
+            <br>
+
+            <label for="doenca">Doença: </label>
+            <select id="doenca" name="doenca">
+                <option value="Nefrite">Nefrite</option>
+                <option value="Conjutivite">Conjutivite</option>
+                <option value="Renite">Renite</option>
+                <option value="Asma">Asma</option>
+                <option value="Tendinite">Tendinite</option>
+            </select><br>
+
+            <br>
+
+            <input type="reset" value="Limpar">
+            <input type="submit" value="Enviar">
+
+        </form>
+    </div>
+
+</body>
+</html>
