@@ -1,0 +1,22 @@
+body{
+    background-color: black;
+}
+
+p{
+    color: white;
+}
+
+#campo_nome{
+    left:95px;
+    top:23px;
+    width: 225px;
+}
+
+.area{
+    position: relative;
+    left:37%;
+    top:29%;
+    width:320px;
+    height: 270px;
+    color: white;
+}
