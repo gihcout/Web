@@ -20,3 +20,17 @@ p{
     height: 270px;
     color: white;
 }
+
+/* Estilos para telas grandes */
+.area {
+    width: 320px;
+    height: 270px;
+}
+
+/* Estilos para dispositivos móveis */
+@media only screen and (max-width: 600px) {
+    .area {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
