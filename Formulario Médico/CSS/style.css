@@ -1,36 +1,78 @@
-body{
-    background-color: black;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
 }
 
-p{
-    color: white;
-}
-
-#campo_nome{
-    left:95px;
-    top:23px;
-    width: 225px;
-}
-
-.area{
-    position: relative;
-    left:37%;
-    top:29%;
-    width:320px;
-    height: 270px;
-    color: white;
-}
-
-/* Estilos para telas grandes */
 .area {
-    width: 320px;
-    height: 270px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
 }
 
-/* Estilos para dispositivos móveis */
-@media only screen and (max-width: 600px) {
-    .area {
-        width: 80%;
-        margin: 0 auto;
-    }
+.area form {
+    padding: 10px;
+}
+
+.area label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.area input[type="text"],
+.area input[type="date"],
+.area input[type="tel"],
+.area input[type="email"],
+.area select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.area input[type="radio"],
+.area input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.area input[type="submit"],
+.area input[type="reset"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.area input[type="submit"]:hover,
+.area input[type="reset"]:hover {
+    background-color: #0056b3;
+}
+
+.area input[type="reset"] {
+    background-color: #dc3545;
+}
+
+.area input[type="reset"]:hover {
+    background-color: #bd2130;
+}
+
+.area input[type="text"]:focus,
+.area input[type="date"]:focus,
+.area input[type="tel"]:focus,
+.area input[type="email"]:focus,
+.area select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
